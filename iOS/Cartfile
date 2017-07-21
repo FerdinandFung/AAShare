@@ -1,0 +1,56 @@
+#### 加密
+#git "https://github.com/adow/SecrecySwift.git" >= 0.3.4
+
+#### NVActivityIndicatorView is a collection of awesome loading animations.
+#github "ninjaprox/NVActivityIndicatorView"
+
+#### TextAttributes makes it easy to compose attributed strings.
+#github "delba/TextAttributes"
+#github "eddiekaiger/SwiftyAttributes"
+
+#### Swift 3.0 framework for parsing, formatting and validating international phone numbers. Inspired by Google's libphonenumber.
+#github "marmelroy/PhoneNumberKit"
+
+#### A Swift formatter kit. Simple formatting syntax for decimal numbers, currency, mass, addresses, ordinal numbers and hexadecimal colors.
+#github "marmelroy/Format"
+
+#### location
+#github "malcommac/SwiftLocation" ~> 1.0
+
+#### A simple, customizable popup dialog for iOS written in Swift. Replaces UIAlertController alert style.
+#github "Orderella/PopupDialog" ~> 0.5
+
+#### auto layout
+#github "SnapKit/SnapKit" ~> 3.0.2
+
+#### Chart 图表
+github "danielgindi/Charts" ~> 3.0.0
+
+#### Log 日志打印
+#github "DaveWoodCom/XCGLogger" ~> 4.0.0
+#github "SwiftyBeaver/SwiftyBeaver"
+
+#### Date 日期计算
+#github "malcommac/SwiftDate" ~> 4.0
+
+#### SDWebImage  swift verion
+#github "onevcat/Kingfisher" ~> 3.0
+
+#### Moya  网络库
+#github "Moya/Moya" ~> 8.0.0
+
+#### RxSwift
+#github "ReactiveX/RxSwift" ~> 3.0
+
+#### Argo  Json <--> Model
+#github "thoughtbot/Argo"
+#github "thoughtbot/Curry"
+
+#### Alamofire
+#github "Alamofire/Alamofire" ~> 4.0
+
+#### realm 数据库
+#github "realm/realm-cocoa"
+
+#### IQKeyboardManager
+github "hackiftekhar/IQKeyboardManager"

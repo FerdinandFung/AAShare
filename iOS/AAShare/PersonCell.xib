@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PersonCell" id="xuA-QX-n4m" customClass="PersonCell" customModule="AAShare" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xuA-QX-n4m" id="rHO-Jh-LSh">
+                <frame key="frameInset" width="375" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSi-Jw-eoW">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7G0-p3-1Fg">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="iRk-6V-olM"/>
+                            <constraint firstAttribute="width" constant="20" id="lGI-hp-4Vb"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_line_xia.png" translatesAutoresizingMaskIntoConstraints="NO" id="4PL-4P-tWv">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="eJr-Jn-xDf"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="7G0-p3-1Fg" secondAttribute="trailing" constant="15" id="GK2-gf-afv"/>
+                    <constraint firstItem="7G0-p3-1Fg" firstAttribute="centerY" secondItem="rHO-Jh-LSh" secondAttribute="centerY" id="S1a-7R-jma"/>
+                    <constraint firstItem="aSi-Jw-eoW" firstAttribute="centerY" secondItem="rHO-Jh-LSh" secondAttribute="centerY" id="Vje-jV-q6e"/>
+                    <constraint firstItem="7G0-p3-1Fg" firstAttribute="leading" secondItem="4PL-4P-tWv" secondAttribute="trailing" id="hQN-Gy-yMW"/>
+                    <constraint firstAttribute="bottom" secondItem="4PL-4P-tWv" secondAttribute="bottom" id="ol1-On-BLa"/>
+                    <constraint firstItem="4PL-4P-tWv" firstAttribute="leading" secondItem="rHO-Jh-LSh" secondAttribute="leading" constant="15" id="we7-YF-1LC"/>
+                    <constraint firstItem="aSi-Jw-eoW" firstAttribute="leading" secondItem="rHO-Jh-LSh" secondAttribute="leading" constant="15" id="zbs-Or-v2x"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="aSi-Jw-eoW" id="nHW-aQ-S1P"/>
+                <outlet property="selectImageView" destination="7G0-p3-1Fg" id="jce-aP-tcI"/>
+            </connections>
+            <point key="canvasLocation" x="-212.5" y="38"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="common_line_xia.png" width="26" height="2"/>
+    </resources>
+</document>

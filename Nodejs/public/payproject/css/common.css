@@ -1,0 +1,120 @@
+﻿body{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #ededed;
+}
+.white{
+  background: #fff;
+}
+/*顶部工具栏*/
+.tools{
+  padding: 12px 49px;
+  height: 44px;
+  line-height: 20px;
+  background: #0AC775;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 99;
+}
+.tools span{
+  display: inline-block;
+  background: url(../../payproject/images/sprite.png) no-repeat;
+  background-size: 320px 150px;
+}
+.tools .home{
+  position: absolute;
+  left: 15px;
+  top: 12px;
+}
+.tools .home span{
+  background-position: -200px -80px;
+  width: 21px;
+  height: 20px;
+}
+.tools h1{
+  text-align: center;
+  font-size: 1.7rem;
+  color: #fff;
+}
+.mt85{
+  margin-top: 85px;
+}
+
+/*内容部分*/
+.content h1{
+  text-align: center;
+  font-size: 3.0rem;
+  color: #0AC775;
+}
+.content .chartContainer{
+  padding-top: 30px;
+  margin:0 auto;
+  width: 75%;
+}
+.content .pieContainer{
+  width: 50%;
+}
+.content .paylistContainer{
+  padding-top: 30px;
+  margin:0 auto;
+  width: 75%;
+}
+.content .paylistContainer .payitem-list{
+  padding: 0 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.content .paylistContainer .payitem-list li{
+  padding-left: 10px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  position: relative;
+  height: 82px;
+  background-color: #eee;
+  font-size: 1.5rem;
+}
+.content .paylistContainer .payitem-list li .payitem-name{
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  text-align: center;
+  overflow : hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #222;
+  line-height: 20px;
+  height: 25px;
+}
+.content .paylistContainer .payitem-list li .oneline{
+  display: inline;
+}
+.content .paylistContainer .payitem-list li .oneline .payitem-persons{
+  float: left;
+}
+.content .paylistContainer .payitem-list li .oneline .payitem-time{
+  text-align: right;
+  margin-right: 10px;
+  float: right;
+}
+/*footer部分*/
+.content .footer{
+  overflow: hidden;
+  font-size: 1.2rem;
+  height: 60px;
+}
+.content .footer .footerleft{
+  width: 50%;
+  margin-left: 10px;
+  float: left;
+}
+.content .footer .footerright{
+  text-align: right;
+  margin-right: 10px;
+  float: right;
+}
+

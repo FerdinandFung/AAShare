@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- meta -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name='description' content='<%= config.description %>'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="<%= config.keywords %>"/>
+    <meta name="apple-itunes-app" content="app-id=xxxxxxxx">
+    <!-- see http://smerity.com/articles/2013/where_did_all_the_http_referrers_go.html -->
+    <meta name="referrer" content="always">
+
+    <%
+    var headers = config.site_headers || [];
+    for (var i = 0, l = headers.length; i < l; i++) {
+    %>
+    <%- headers[i] %>
+    <% } %>
+
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="/rss"/>
+
+    <link type="text/css" rel="stylesheet" href="../../public/payproject/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="../../public/payproject/css/common.css">
+
+    <% if (config.site_icon) { %>
+    <link rel="icon" href="<%- staticFile(config.site_icon) %>" type="image/x-icon"/>
+    <% } %>
+
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--
+    <script src="../public/libs/Chart.bundle.js"></script>
+    <script src="../public/libs/Chart.utils.js"></script>
+    -->
+
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    -->
+    <script src="../../public/libs/Chart.min.js"></script>
+
+    <script src="../../public/payproject/js/tools.js"></script>
+
+    <meta content="_csrf" name="csrf-param">
+    <meta content="<%= csrf %>" name="csrf-token">
+
+</head>
+<body class="white">
+<div>
+<!-- 顶部工具栏 -->
+<div class="tools">
+    <a href="<%= config.wwwhost %>" class="home">
+        <span></span>
+    </a>
+    <h1><%= config.sitetitle %></h1>
+</div>
+<!-- 内容 -->
+<div class="content mt85">
+    <h1><%- chartTitle %> 账本详情</h1>
+
+    <div class="chartContainer pieContainer">
+        <canvas id="pieCanvas"></canvas>
+    </div>
+    <div class="chartContainer">
+        <canvas id="barCanvas"></canvas>
+    </div>
+
+    <div class="paylistContainer">
+        <% if (payitems.length) { %>
+            <ul class="payitem-list">
+                <% payitems.forEach( function(payitem) { %>
+                    <li>
+                        <h3 class="payitem-name"><%= payitem.name %></h3>
+                        <h3 class="payitem-type">总<%= payitem.type %>：<%= payitem.money %></h3>
+                        <div class="oneline">
+                            <%  var pNames = '参与者：' + payitem.personsNames; %>
+                            <h3 class="payitem-persons"><%= pNames %></h3>
+                            <h3 class="payitem-time"><%= payitem.date %></h3>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } %>
+    </div>
+
+    <footer class="footer oneline">
+        <div class="footerleft">
+            <span>&copy; 2017 <a href="">funpig</a> | All Rights Reserved.</span>
+        </div>
+        <div class="footerright">
+            <span>Funpig's App is created by <a href="">@funpig</a></span>
+        </div>
+    </footer>
+
+
+    <script>
+//        var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+//        var color = Chart.helpers.color;
+//        var barChartData = {
+//            labels: ["January", "February", "March", "April", "May", "June", "July"],
+//            datasets: [{
+//                label: 'Dataset 1',
+//                backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+//                borderColor: window.chartColors.red,
+//                borderWidth: 1,
+//                data: [
+//                    randomScalingFactor(),
+//                    randomScalingFactor(),
+//                    randomScalingFactor(),
+//                    randomScalingFactor(),
+//                    randomScalingFactor(),
+//                    randomScalingFactor(),
+//                    randomScalingFactor()
+//                ]
+//            }, {
+//                label: 'Dataset 2',
+//                backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+//                borderColor: window.chartColors.blue,
+//                borderWidth: 1,
+//                data: [
+//                    randomScalingFactor(),
+//                    randomScalingFactor(),
+//                    randomScalingFactor(),
+//                    randomScalingFactor(),
+//                    randomScalingFactor(),
+//                    randomScalingFactor(),
+//                    randomScalingFactor()
+//                ]
+//            }]
+//
+//        };
+
+        var drawBarChart = function () {
+            var ctx = document.getElementById("barCanvas").getContext("2d");
+            var data = '<%- JSON.stringify(barChartData) %>';
+            data = JSON.parse(data);
+            var title = '<%- chartTitle %>';
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top'
+                    },
+                    title: {
+                        display: true,
+                        text: title
+                    }
+                }
+            });
+
+        };
+
+        var drawPieChart = function () {
+            var ctx = document.getElementById("pieCanvas").getContext("2d");
+            var data = '<%- JSON.stringify(pieChartData) %>';
+            data = JSON.parse(data);
+            window.myBar = new Chart(ctx, {
+                type: 'pie',
+                data: data,
+                options: {
+                    responsive: true
+                }
+            });
+
+        };
+
+        window.onload = function () {
+            drawPieChart();
+            drawBarChart();
+            console.log('window.onload');
+        };
+    </script>
+
+</div>
+</div>
+
+</body>
+</html>
+

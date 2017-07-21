@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectListCell" rowHeight="130" id="dX5-FD-kTj" customClass="ProjectListCell" customModule="AAShare" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dX5-FD-kTj" id="Jh5-Xd-RvG">
+                <frame key="frameInset" width="375" height="133"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdc-3d-06r">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的私人账本" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiJ-Y9-mor">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3人参与" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nd-Lq-0fx">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23/01/2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opo-MD-6Pw">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="1nd-Lq-0fx" secondAttribute="bottom" constant="6" id="6mE-e5-b8c"/>
+                            <constraint firstItem="Opo-MD-6Pw" firstAttribute="baseline" secondItem="1nd-Lq-0fx" secondAttribute="baseline" id="EP8-Mb-2lO"/>
+                            <constraint firstItem="tiJ-Y9-mor" firstAttribute="top" secondItem="vdc-3d-06r" secondAttribute="top" constant="6" id="MOy-dA-WZX"/>
+                            <constraint firstItem="Opo-MD-6Pw" firstAttribute="trailing" secondItem="tiJ-Y9-mor" secondAttribute="trailing" id="l0K-A4-GcJ"/>
+                            <constraint firstItem="1nd-Lq-0fx" firstAttribute="leading" secondItem="tiJ-Y9-mor" secondAttribute="leading" id="tFy-uZ-Sqc"/>
+                            <constraint firstAttribute="trailing" secondItem="tiJ-Y9-mor" secondAttribute="trailing" constant="6" id="z55-0D-O3c"/>
+                            <constraint firstItem="tiJ-Y9-mor" firstAttribute="leading" secondItem="vdc-3d-06r" secondAttribute="leading" constant="6" id="zWi-I8-mbe"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vdc-3d-06r" firstAttribute="leading" secondItem="Jh5-Xd-RvG" secondAttribute="leading" constant="15" id="1VX-B5-sNh"/>
+                    <constraint firstAttribute="trailing" secondItem="vdc-3d-06r" secondAttribute="trailing" constant="15" id="Cgc-bb-SAE"/>
+                    <constraint firstItem="vdc-3d-06r" firstAttribute="top" secondItem="Jh5-Xd-RvG" secondAttribute="top" constant="8" id="IH3-e6-IaR"/>
+                    <constraint firstAttribute="bottom" secondItem="vdc-3d-06r" secondAttribute="bottom" constant="8" id="xLg-Pl-N27"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="Opo-MD-6Pw" id="Sdk-Uz-OQO"/>
+                <outlet property="detailView" destination="vdc-3d-06r" id="jer-aR-XDB"/>
+                <outlet property="numLabel" destination="1nd-Lq-0fx" id="rNH-ve-iiN"/>
+                <outlet property="titleLabel" destination="tiJ-Y9-mor" id="ijF-II-DSD"/>
+            </connections>
+            <point key="canvasLocation" x="-124.5" y="-46.5"/>
+        </tableViewCell>
+    </objects>
+</document>
